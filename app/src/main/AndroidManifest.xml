@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlquilaTuCoche">
         <activity
-            android:name=".LogginActivity"
+            android:name=".activity.LogginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.RegistroActivity" />
+        <activity android:name=".activity.MainActivity" />
     </application>
 
 </manifest>

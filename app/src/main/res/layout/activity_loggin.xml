@@ -2,22 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/loggin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F0F4"
-    tools:context=".LogginActivity">
+    android:background="#FFFFFF"
+    tools:context=".activity.LogginActivity">
 
     <LinearLayout
         android:id="@+id/layoutTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:layout_marginTop="48dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Alquila tu coche"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -40,13 +40,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="6dp"
-        app:layout_constraintTop_toBottomOf="@id/layoutTitulo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/layoutTitulo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -60,20 +60,20 @@
                 android:text="Portal de entrada"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/etUsuario"
+                android:id="@+id/etEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:hint="Usuario o email"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
-                app:layout_constraintTop_toBottomOf="@id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/textView" />
 
             <EditText
                 android:id="@+id/etContrasena"
@@ -82,20 +82,20 @@
                 android:layout_marginTop="16dp"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
-                app:layout_constraintTop_toBottomOf="@id/etUsuario"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
             <Button
-                android:id="@+id/btLoggin"
+                android:id="@+id/btAcceder"
                 style="@style/BotonPrincipal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Acceder"
-                app:layout_constraintTop_toBottomOf="@id/etContrasena"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/etContrasena" />
 
             <Button
                 android:id="@+id/btRegistrar"
@@ -105,10 +105,10 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="8dp"
                 android:text="Registrarse"
-                app:layout_constraintTop_toBottomOf="@id/btLoggin"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btAcceder" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
