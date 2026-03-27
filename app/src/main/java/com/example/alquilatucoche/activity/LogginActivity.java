@@ -56,7 +56,7 @@ public class LogginActivity extends AppCompatActivity {
         }
 
         // LOGIN PROVISIONAL
-        if (email.equals("test@test.comtest") && contrasena.equals("1234")) {
+        if (email.equals("test@gmail.com") && contrasena.equals("1234")) {
             Toast.makeText(this, "Login correcto", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(LogginActivity.this, MainActivity.class);
