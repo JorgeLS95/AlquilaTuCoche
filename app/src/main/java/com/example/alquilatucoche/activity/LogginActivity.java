@@ -60,6 +60,8 @@ public class LogginActivity extends AppCompatActivity {
             Toast.makeText(this, "Login correcto", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(LogginActivity.this, MainActivity.class);
+            // Pasamos el email a la MainActivity
+            intent.putExtra("USER_EMAIL", email);
             startActivity(intent);
             finish();
         } else {

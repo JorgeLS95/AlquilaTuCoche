@@ -19,7 +19,7 @@ import java.util.Calendar;
 
 public class RegistroActivity extends AppCompatActivity {
 
-    private EditText etEmail, etContrasena, etFechaNacimiento, etLugarNacimiento;
+    private EditText etNombre, etEmail, etContrasena, etFechaNacimiento, etLugarNacimiento;
     private Button btConfirmarRegistro, btVolver;
     private Calendar calendarNacimiento;
 
@@ -42,6 +42,7 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        etNombre = findViewById(R.id.etNombreRegistro);
         etEmail = findViewById(R.id.etEmailRegistro);
         etContrasena = findViewById(R.id.etContrasenaRegistro);
         etFechaNacimiento = findViewById(R.id.etFechaNacimiento);
@@ -66,18 +67,24 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     private void registrarUsuario() {
+        String nombre = etNombre.getText().toString().trim();
         String email = etEmail.getText().toString().trim();
         String contrasena = etContrasena.getText().toString().trim();
         String fecha = etFechaNacimiento.getText().toString().trim();
         String lugar = etLugarNacimiento.getText().toString().trim();
 
-        if (validarCampos(email, contrasena, fecha, lugar)) {
-            Toast.makeText(this, "Registro completado con éxito", Toast.LENGTH_SHORT).show();
+        if (validarCampos(nombre, email, contrasena, fecha, lugar)) {
+            Toast.makeText(this, "Registro completado con éxito para " + nombre, Toast.LENGTH_SHORT).show();
             finish();
         }
     }
 
-    private boolean validarCampos(String email, String contrasena, String fecha, String lugar) {
+    private boolean validarCampos(String nombre, String email, String contrasena, String fecha, String lugar) {
+        if (nombre.isEmpty()) {
+            etNombre.setError("Introduce tu nombre completo");
+            return false;
+        }
+
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etEmail.setError("Email no válido");
             return false;

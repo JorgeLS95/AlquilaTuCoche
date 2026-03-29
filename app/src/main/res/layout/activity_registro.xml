@@ -12,7 +12,7 @@
         android:id="@+id/layoutTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="6dp"
@@ -66,16 +66,28 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/etEmailRegistro"
+                android:id="@+id/etNombreRegistro"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:hint="Email / Usuario"
+                android:hint="Nombre completo"
+                android:inputType="textPersonName"
+                android:autofillHints="personName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRegistroTitulo" />
+
+            <EditText
+                android:id="@+id/etEmailRegistro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:autofillHints="emailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvRegistroTitulo" />
+                app:layout_constraintTop_toBottomOf="@id/etNombreRegistro" />
 
             <EditText
                 android:id="@+id/etContrasenaRegistro"
@@ -97,7 +109,7 @@
                 android:clickable="true"
                 android:focusable="false"
                 android:hint="Fecha de nacimiento"
-                android:inputType="datetime"
+                android:inputType="none"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/etContrasenaRegistro" />
@@ -126,12 +138,13 @@
 
             <Button
                 android:id="@+id/btVolver"
-                style="@style/BotonPrincipal"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Volver al Login"
+                android:textColor="@color/azul"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
