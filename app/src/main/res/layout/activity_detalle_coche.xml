@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:id="@+id/ivDetalleCoche"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/coche"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnVolverDetalle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/boton_principal"
+            android:backgroundTint="#80000000"
+            android:src="@android:drawable/ic_menu_revert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvDetalleNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Seat Arona"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivDetalleCoche" />
+
+        <TextView
+            android:id="@+id/tvDetallePrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="45€ / día"
+            android:textColor="@color/azul"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvDetalleNombre"
+            app:layout_constraintTop_toBottomOf="@id/tvDetalleNombre" />
+
+        <TextView
+            android:id="@+id/tvDetalleDescripcion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Descripción detallada del coche, características, extras, etc."
+            android:textColor="#666666"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/tvDetalleNombre"
+            app:layout_constraintStart_toStartOf="@id/tvDetalleNombre"
+            app:layout_constraintTop_toBottomOf="@id/tvDetallePrecio" />
+
+        <View
+            android:id="@+id/divDetalle"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="#DDDDDD"
+            app:layout_constraintEnd_toEndOf="@id/tvDetalleNombre"
+            app:layout_constraintStart_toStartOf="@id/tvDetalleNombre"
+            app:layout_constraintTop_toBottomOf="@id/tvDetalleDescripcion" />
+
+        <TextView
+            android:id="@+id/tvTituloReserva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Realizar Reserva"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvDetalleNombre"
+            app:layout_constraintTop_toBottomOf="@id/divDetalle" />
+
+        <EditText
+            android:id="@+id/etFechaInicio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Fecha Inicio"
+            android:inputType="none"
+            app:layout_constraintEnd_toStartOf="@+id/etFechaFin"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/tvDetalleNombre"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloReserva" />
+
+        <EditText
+            android:id="@+id/etFechaFin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Fecha Fin"
+            android:inputType="none"
+            app:layout_constraintEnd_toEndOf="@id/tvDetalleNombre"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/etFechaInicio"
+            app:layout_constraintTop_toTopOf="@id/etFechaInicio" />
+
+        <Button
+            android:id="@+id/btConfirmarReserva"
+            style="@style/BotonPrincipal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Reservar ahora"
+            app:layout_constraintEnd_toEndOf="@id/tvDetalleNombre"
+            app:layout_constraintStart_toStartOf="@id/tvDetalleNombre"
+            app:layout_constraintTop_toBottomOf="@id/etFechaInicio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -50,9 +50,9 @@ public class ListaCochesFragment extends Fragment {
 
     private void cargarDatosPrueba() {
         listaCoches = new ArrayList<>();
-        listaCoches.add(new Coche("Seat Arona - Rojo - 2023", R.drawable.coche));
-        listaCoches.add(new Coche("Seat Ibiza - Blanco - 2022", R.drawable.coche));
-        listaCoches.add(new Coche("Volkswagen Golf - Negro - 2021", R.drawable.coche));
-        listaCoches.add(new Coche("Toyota Corolla - Gris - 2024", R.drawable.coche));
+        listaCoches.add(new Coche("Seat", "Arona", "Rojo - 2023. Perfecto estado.", 45.0, R.drawable.coche));
+        listaCoches.add(new Coche("Seat", "Ibiza", "Blanco - 2022. Muy bajo consumo.", 35.0, R.drawable.coche));
+        listaCoches.add(new Coche("Volkswagen", "Golf", "Negro - 2021. Deportivo y cómodo.", 60.0, R.drawable.coche));
+        listaCoches.add(new Coche("Toyota", "Corolla", "Gris - 2024. Híbrido, etiqueta ECO.", 55.0, R.drawable.coche));
     }
 }

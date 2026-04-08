@@ -1,5 +1,6 @@
 package com.example.alquilatucoche.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.alquilatucoche.R;
+import com.example.alquilatucoche.activity.DetalleCocheActivity;
 import com.example.alquilatucoche.model.Coche;
 
 import java.util.List;
@@ -32,8 +34,14 @@ public class CocheAdapter extends RecyclerView.Adapter<CocheAdapter.CocheViewHol
     @Override
     public void onBindViewHolder(@NonNull CocheViewHolder holder, int position) {
         Coche coche = listaCoches.get(position);
-        holder.tvDescripcion.setText(coche.getDescripcion());
+        holder.tvNombre.setText(coche.getNombreCompleto());
         holder.ivCoche.setImageResource(coche.getImagenResId());
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), DetalleCocheActivity.class);
+            intent.putExtra("COCHE_DATA", coche);
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
@@ -43,12 +51,12 @@ public class CocheAdapter extends RecyclerView.Adapter<CocheAdapter.CocheViewHol
 
     public static class CocheViewHolder extends RecyclerView.ViewHolder {
         ImageView ivCoche;
-        TextView tvDescripcion;
+        TextView tvNombre;
 
         public CocheViewHolder(@NonNull View itemView) {
             super(itemView);
             ivCoche = itemView.findViewById(R.id.ivCoche);
-            tvDescripcion = itemView.findViewById(R.id.tvDescripcionCoche);
+            tvNombre = itemView.findViewById(R.id.tvDescripcionCoche);
         }
     }
 }

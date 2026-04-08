@@ -1,27 +1,29 @@
 package com.example.alquilatucoche.model;
 
-public class Coche {
+import java.io.Serializable;
+
+public class Coche implements Serializable {
+    private String marca;
+    private String modelo;
     private String descripcion;
-    private int imagenResId; // Por ahora usaremos recursos locales
+    private double precioDia;
+    private int imagenResId;
 
-    public Coche(String descripcion, int imagenResId) {
+    public Coche(String marca, String modelo, String descripcion, double precioDia, int imagenResId) {
+        this.marca = marca;
+        this.modelo = modelo;
         this.descripcion = descripcion;
+        this.precioDia = precioDia;
         this.imagenResId = imagenResId;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public int getImagenResId() {
-        return imagenResId;
-    }
-
-    public void setImagenResId(int imagenResId) {
-        this.imagenResId = imagenResId;
+    public String getMarca() { return marca; }
+    public String getModelo() { return modelo; }
+    public String getDescripcion() { return descripcion; }
+    public double getPrecioDia() { return precioDia; }
+    public int getImagenResId() { return imagenResId; }
+    
+    public String getNombreCompleto() {
+        return marca + " " + modelo;
     }
 }

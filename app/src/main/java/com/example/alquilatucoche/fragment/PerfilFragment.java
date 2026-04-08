@@ -191,8 +191,8 @@ public class PerfilFragment extends Fragment {
 
     private void setupMisCoches() {
         List<Coche> listaCoches = new ArrayList<>();
-        listaCoches.add(new Coche("Seat Arona - 2023", R.drawable.coche));
-        listaCoches.add(new Coche("Ford Focus - 2021", R.drawable.coche));
+        listaCoches.add(new Coche("Seat", "Arona", "Rojo - 2023. Perfecto estado.", 45.0, R.drawable.coche));
+        listaCoches.add(new Coche("Ford", "Focus", "Azul - 2021. Muy cuidado.", 40.0, R.drawable.coche));
 
         CocheAdapter adapter = new CocheAdapter(listaCoches);
         rvMisCoches.setLayoutManager(new LinearLayoutManager(getContext()));
